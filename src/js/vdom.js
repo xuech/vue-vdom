@@ -43,6 +43,7 @@ function setAttrs(node, key, value) {
 			}
 			break;
 		case 'style':
+			console.log(node,key,value);
 			node.style.cssText = value;
 			break;
 		default:
@@ -57,6 +58,7 @@ function renderDom(el,target){
 }
 
 export {
+	Element,
   createElement,
   render,
   setAttrs,
