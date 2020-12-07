@@ -30,7 +30,6 @@ function patch(node,patches){
 	
 	// 替换和修改对比完之后，再打上添加节点的补丁
 	for (let i in patches) {
-		// console.log(allPatches[i][0])
 		if(allPatches[i][0].type == 'ADD'){
 			doPatch(node,allPatches[i]);
 		}
@@ -79,26 +78,6 @@ function doPatch(node,patches){
 				break;
 		}
 	});
-}
-
-function setAttr(node,key,value){
-	// 需要判断key是什么
-	switch(key){
-		case 'value':
-			if(node.tagName.toLowerCase() === 'input' ||
-				node.tagName.toLowerCase() == 'textarea'){
-				node.value = value;
-			}else{
-				node.setAttribute(key,value);
-			}
-			break;
-		case 'style':
-			node.style.cssText = value;
-			break;
-		default:
-			node.setAttribute(key,value);
-			break;
-	}
 }
 
 export {
