@@ -1,7 +1,11 @@
 // 这个对象用来存放改变的补丁
 let patches = {};
 
-// 比较新老虚拟dom，返回一个补丁对象，记录了虚拟dom的变化
+/**
+ * 比较新老虚拟dom，返回一个补丁对象，记录了虚拟dom的变化
+ * @param {node} oldTree 
+ * @param {node} newTree 
+ */
 function diff(oldTree,newTree){
 	
 	// 第一次比较
